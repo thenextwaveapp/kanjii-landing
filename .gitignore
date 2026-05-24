@@ -37,3 +37,4 @@ next-env.d.ts
 # temp migration artifacts
 /components/landing-body.txt
 /components/landing-script.js
+.vercel

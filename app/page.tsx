@@ -1,4 +1,5 @@
 import LandingEffects from '@/components/LandingEffects';
+import WaitlistForm from '@/components/WaitlistForm';
 
 export default function Home() {
   return (
@@ -19,15 +20,10 @@ export default function Home() {
             <p className="hero-sub">
               Kanjii teaches you to write Japanese like a native. <strong>Write your way to fluency.</strong>
             </p>
-            <p className="hero-tag">Now on iOS & Android</p>
+            <p className="hero-tag">Coming soon to iOS & Android</p>
             <div className="hero-actions">
-              <a href="#" className="store-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                App Store — iOS
-              </a>
-              <a href="#" className="store-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.96.14l11.26-6.5-2.42-2.43-9.8 8.79zM.42 1.9C.16 2.19 0 2.64 0 3.21v17.57c0 .57.16 1.02.43 1.32l.07.07 9.84-9.84v-.23L.49 1.83l-.07.07zM20.54 10.27l-2.79-1.61-2.72 2.72 2.72 2.72 2.82-1.63c.8-.46.8-1.21-.03-1.2zM3.18.24L14.44 6.74l-2.42 2.42L2.22.38c.32-.09.67-.04.96.14v-.28z"/></svg>
-                Google Play — Android
+              <a href="#waitlist" className="btn-primary">
+                Join the Waitlist
               </a>
             </div>
           </div>
@@ -356,21 +352,12 @@ export default function Home() {
       <div className="divider"></div>
       
       {/* CTA */}
-      <section className="cta-section" id="download">
+      <section className="cta-section" id="waitlist">
         <div className="cta-inner">
           <span className="cta-jp reveal">頑張って</span>
           <h2 className="cta-title reveal">Learn Japanese <br />the way it's<span style={{ color: 'var(--accent)' }}><br />actually used.</span></h2>
-          <p className="cta-sub reveal">Free to start. No credit card. No angry owls. Just you and your kanji.</p>
-          <div className="cta-buttons reveal">
-            <a href="#" className="store-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              App Store — iOS
-            </a>
-            <a href="#" className="store-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.96.14l11.26-6.5-2.42-2.43-9.8 8.79zM.42 1.9C.16 2.19 0 2.64 0 3.21v17.57c0 .57.16 1.02.43 1.32l.07.07 9.84-9.84v-.23L.49 1.83l-.07.07zM20.54 10.27l-2.79-1.61-2.72 2.72 2.72 2.72 2.82-1.63c.8-.46.8-1.21-.03-1.2zM3.18.24L14.44 6.74l-2.42 2.42L2.22.38c.32-.09.67-.04.96.14v-.28z"/></svg>
-              Google Play — Android
-            </a>
-          </div>
+          <p className="cta-sub reveal">Be the first to know when Kanjii launches. No spam — just one email when we're ready.</p>
+          <WaitlistForm />
         </div>
       </section>
       
