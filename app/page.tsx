@@ -356,7 +356,7 @@ export default function Home() {
         <div className="cta-inner">
           <span className="cta-jp reveal">頑張って</span>
           <h2 className="cta-title reveal">Learn Japanese <br />the way it's<span style={{ color: 'var(--accent)' }}><br />actually used.</span></h2>
-          <p className="cta-sub reveal">Be the first to know when Kanjii launches. No spam — just one email when we're ready.</p>
+          <p className="cta-sub reveal">Be the first to know when Kanjii launches.</p>
           <WaitlistForm />
         </div>
       </section>
