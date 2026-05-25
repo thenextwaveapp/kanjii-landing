@@ -19,11 +19,10 @@
   --white: #ffffff;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
-body {
+/* Landing page dark theme - scoped to prevent overriding beta pages */
+body:has(canvas#falling-canvas) {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sf);
