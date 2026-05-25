@@ -62,24 +62,20 @@ export function BetaForm({ token }: { token: string }) {
         name="ios_device"
         required
         options={[
+          "iPhone 17 Pro / Pro Max",
+          "iPhone 17 / 17 Air",
+          "iPhone 17e",
           "iPhone 16 Pro / Pro Max",
           "iPhone 16 / 16 Plus",
           "iPhone 15 Pro / Pro Max",
           "iPhone 15 / 15 Plus",
-          "iPhone 14 Pro / Pro Max",
-          "iPhone 14 / 14 Plus",
-          "iPhone 13 Pro / Pro Max",
-          "iPhone 13 / 13 mini",
-          "iPhone 12 Pro / Pro Max",
-          "iPhone 12 / 12 mini",
-          "iPhone 11 Pro / Pro Max",
-          "iPhone 11",
-          "iPhone SE (3rd gen)",
-          "iPhone SE (2nd gen)",
+          "iPhone 14 series",
+          "iPhone 13 series",
+          "iPhone 12 series",
+          "iPhone SE (3rd gen or newer)",
           "iPad Pro",
           "iPad Air",
-          "iPad mini",
-          "iPad (10th gen or newer)",
+          "iPad",
         ]}
       />
 
@@ -87,9 +83,11 @@ export function BetaForm({ token }: { token: string }) {
         label="iOS version"
         name="ios_version"
         options={[
-          "iOS 18",
-          "iOS 17",
-          "iOS 16",
+          "iOS 26.5 (latest)",
+          "iOS 26",
+          "iOS 25",
+          "iOS 24",
+          "iOS 23",
         ]}
       />
 
