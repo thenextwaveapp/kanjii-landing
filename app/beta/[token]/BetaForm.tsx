@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const EDGE_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/submit-beta-application`;
 
-export function BetaForm({ token, email }: { token: string; email: string }) {
+export function BetaForm({ token }: { token: string }) {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -47,8 +47,8 @@ export function BetaForm({ token, email }: { token: string; email: string }) {
       }
 
       router.push("/beta/applied");
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
       setSubmitting(false);
     }
   }

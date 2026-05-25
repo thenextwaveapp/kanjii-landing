@@ -47,7 +47,7 @@ export default async function BetaApplicationPage({
           you're approved.
         </p>
 
-        <BetaForm token={token} email={signup.email} />
+        <BetaForm token={token} />
       </div>
     </main>
   );
