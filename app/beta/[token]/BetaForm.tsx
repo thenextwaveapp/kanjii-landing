@@ -62,17 +62,36 @@ export function BetaForm({ token }: { token: string }) {
         name="ios_device"
         required
         options={[
+          "iPhone 16 Pro / Pro Max",
+          "iPhone 16 / 16 Plus",
           "iPhone 15 Pro / Pro Max",
           "iPhone 15 / 15 Plus",
-          "iPhone 14 series",
-          "iPhone 13 series",
-          "iPhone 12 series",
-          "iPhone 11 / SE / older",
-          "iPad",
+          "iPhone 14 Pro / Pro Max",
+          "iPhone 14 / 14 Plus",
+          "iPhone 13 Pro / Pro Max",
+          "iPhone 13 / 13 mini",
+          "iPhone 12 Pro / Pro Max",
+          "iPhone 12 / 12 mini",
+          "iPhone 11 Pro / Pro Max",
+          "iPhone 11",
+          "iPhone SE (3rd gen)",
+          "iPhone SE (2nd gen)",
+          "iPad Pro",
+          "iPad Air",
+          "iPad mini",
+          "iPad (10th gen or newer)",
         ]}
       />
 
-      <Field label="iOS version (optional)" name="ios_version" placeholder="e.g. 17.5" />
+      <Select
+        label="iOS version"
+        name="ios_version"
+        options={[
+          "iOS 18",
+          "iOS 17",
+          "iOS 16",
+        ]}
+      />
 
       <Select
         label="Your Japanese level"

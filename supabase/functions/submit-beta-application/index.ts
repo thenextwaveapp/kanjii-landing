@@ -65,7 +65,7 @@ Deno.serve(async (req) => {
     const { data: existingApp } = await supabase
       .from("beta_applications")
       .select("id")
-      .eq("signup_id", signupData.id)
+      .eq("waitlist_signup_id", signupData.id)
       .single();
 
     if (existingApp) {
@@ -79,7 +79,8 @@ Deno.serve(async (req) => {
     const { error: insertError } = await supabase
       .from("beta_applications")
       .insert({
-        signup_id: signupData.id,
+        waitlist_signup_id: signupData.id,
+        email: signupData.email,
         full_name,
         ios_device,
         ios_version,
