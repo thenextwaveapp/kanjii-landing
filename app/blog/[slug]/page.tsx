@@ -123,21 +123,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           )}
 
           {/* CONTENT */}
-          <div
-            className="prose prose-invert prose-lg max-w-none
-              prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-[#EFEFEF]
-              prose-h2:text-[40px] prose-h2:mt-12 prose-h2:mb-6
-              prose-h3:text-[28px] prose-h3:mt-10 prose-h3:mb-4
-              prose-p:text-[17px] prose-p:leading-[1.75] prose-p:text-[#999] prose-p:mb-6
-              prose-strong:text-[#EFEFEF] prose-strong:font-semibold
-              prose-a:text-[#E85D3A] prose-a:no-underline hover:prose-a:underline
-              prose-ul:text-[#999] prose-ul:my-6
-              prose-ol:text-[#999] prose-ol:my-6
-              prose-li:my-2
-              prose-code:text-[#E85D3A] prose-code:bg-[#111] prose-code:px-2 prose-code:py-1 prose-code:rounded
-              prose-pre:bg-[#111] prose-pre:border prose-pre:border-[#222]"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className="bg-white rounded-2xl p-12 shadow-lg">
+            <div
+              className="entry-content"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          </div>
 
           {/* BACK TO BLOG */}
           <div className="mt-16 pt-12 border-t border-[#222]">

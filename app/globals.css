@@ -943,6 +943,76 @@ footer {
   z-index: 1;
 }
 
+/* ── BLOG POST CONTENT STYLES ── */
+.entry-content {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  color: #2c2c2c;
+}
+
+.entry-content p {
+  font-size: 20px;
+  line-height: 38px;
+  margin-bottom: 32px;
+  color: #3a3a3a;
+  letter-spacing: 0.01em;
+}
+
+.entry-content h2 {
+  font-family: var(--sf);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 56px;
+  margin-bottom: 28px;
+  color: #0a0a0a;
+  letter-spacing: -0.5px;
+}
+
+.entry-content h3 {
+  font-family: var(--sf);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 44px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.entry-content strong {
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.entry-content em {
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+.entry-content a {
+  color: #E85D3A;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.entry-content a:hover {
+  border-bottom-color: #E85D3A;
+}
+
+.entry-content ul,
+.entry-content ol {
+  margin: 28px 0;
+  padding-left: 32px;
+}
+
+.entry-content li {
+  font-size: 20px;
+  line-height: 38px;
+  margin-bottom: 16px;
+  color: #3a3a3a;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
