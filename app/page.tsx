@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import LandingEffects from '@/components/LandingEffects';
 import WaitlistForm from '@/components/WaitlistForm';
 
@@ -8,7 +9,7 @@ export default function Home() {
       {/* NAV */}
       <nav>
         <div className="nav-logo">Kanj<span>ii</span> <span style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: '14px', color: '#555', fontWeight: '400' }}>漢字</span></div>
-        <a href="/blog" className="nav-cta">Blog</a>
+        <Link href="/blog" className="nav-cta">Blog</Link>
       </nav>
       
       {/* HERO */}
@@ -366,8 +367,8 @@ export default function Home() {
       <footer>
         <div className="footer-logo">Kanj<span>ii</span></div>
         <div className="footer-links">
-          <a href="/blog" className="footer-link">Blog</a>
-          <a href="/support" className="footer-link">Support</a>
+          <Link href="/blog" className="footer-link">Blog</Link>
+          <Link href="/support" className="footer-link">Support</Link>
         </div>
         <div className="footer-text">Built for Japanese learners, by a Japanese learner. 頑張って！</div>
         <div className="footer-text">© 2026 Kanjii</div>
