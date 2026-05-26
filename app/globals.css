@@ -887,8 +887,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
   position: relative;
   z-index: 1;
+  flex-wrap: wrap;
 }
 
 .footer-logo {
@@ -898,6 +900,21 @@ footer {
   letter-spacing: -0.5px;
 }
 .footer-logo span { color: var(--accent); }
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--text); }
 
 .footer-text { font-size: 13px; color: var(--muted2); }
 

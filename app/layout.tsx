@@ -18,11 +18,11 @@ const notoSerif = Noto_Serif_JP({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kanjii.app"),
-  title: "Kanjii — Learn to Read & Type Japanese",
+  title: "Learn Japanese Kanji Skills | Kanjii",
   description:
     "Kanjii teaches you to write Japanese like a native. Type real sentences with a Japanese IME, build your personal kanji library, and progress through JLPT levels.",
   openGraph: {
-    title: "Kanjii — Learn to Read & Type Japanese",
+    title: "Learn Japanese Kanji Skills | Kanjii",
     description:
       "Learn Japanese the way it's actually used. Type real sentences, build your kanji library, and progress from N5 to N1.",
     url: "https://kanjii.app",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kanjii — Learn to Read & Type Japanese",
+    title: "Learn Japanese Kanji Skills | Kanjii",
     description:
       "Learn Japanese the way it's actually used. Type real sentences with a Japanese IME.",
   },
