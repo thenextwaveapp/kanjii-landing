@@ -9,7 +9,7 @@ export default function Home() {
       {/* NAV */}
       <nav>
         <div className="nav-logo">Kanj<span>ii</span> <span style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: '14px', color: '#555', fontWeight: '400' }}>漢字</span></div>
-        <Link href="/blog" className="nav-cta">Blog</Link>
+        <Link href="/blog" style={{ color: '#EFEFEF', fontSize: '15px', fontWeight: '600', textDecoration: 'none' }}>Blog</Link>
       </nav>
       
       {/* HERO */}

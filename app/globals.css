@@ -21,6 +21,11 @@
 
 html { scroll-behavior: smooth; }
 
+/* Default body background */
+body {
+  background: var(--bg);
+}
+
 /* Landing page dark theme - scoped to prevent overriding beta pages */
 body:has(canvas#falling-canvas) {
   background: var(--bg);
@@ -959,13 +964,18 @@ footer {
 
 .entry-content h2 {
   font-family: var(--sf);
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 700;
   line-height: 1.2;
-  margin-top: 56px;
-  margin-bottom: 28px;
+  margin-top: 64px;
+  margin-bottom: 20px;
   color: #0a0a0a;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+.entry-content h2:first-child {
+  margin-top: 12px;
 }
 
 .entry-content h3 {

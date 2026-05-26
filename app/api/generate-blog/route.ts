@@ -20,6 +20,7 @@ interface BlogPostContent {
   excerpt: string;
   tags: string[];
   reading_time_minutes: number;
+  featured_image_url: string;
 }
 
 function slugify(text: string): string {
@@ -39,19 +40,20 @@ function estimateReadingTime(content: string): number {
 
 async function generateBlogPost(): Promise<BlogPostContent> {
   const topics = [
-    'effective kanji learning strategies',
-    'how to master Japanese IME typing',
-    'JLPT preparation tips and techniques',
-    'understanding Japanese grammar patterns',
-    'common mistakes Japanese learners make',
-    'how to improve Japanese reading speed',
-    'building a sustainable Japanese study routine',
-    'the importance of context in kanji learning',
-    'comparing different Japanese learning methods',
-    'cultural insights for Japanese learners'
+    { topic: 'effective kanji learning strategies', imageQuery: 'japanese calligraphy writing' },
+    { topic: 'how to master Japanese IME typing', imageQuery: 'japanese keyboard typing' },
+    { topic: 'JLPT preparation tips and techniques', imageQuery: 'student studying japanese' },
+    { topic: 'understanding Japanese grammar patterns', imageQuery: 'japanese textbook learning' },
+    { topic: 'common mistakes Japanese learners make', imageQuery: 'frustrated student studying' },
+    { topic: 'how to improve Japanese reading speed', imageQuery: 'person reading japanese book' },
+    { topic: 'building a sustainable Japanese study routine', imageQuery: 'organized study desk japanese' },
+    { topic: 'the importance of context in kanji learning', imageQuery: 'japanese characters context' },
+    { topic: 'comparing different Japanese learning methods', imageQuery: 'language learning methods' },
+    { topic: 'cultural insights for Japanese learners', imageQuery: 'japanese culture temple' }
   ];
 
-  const randomTopic = topics[Math.floor(Math.random() * topics.length)];
+  const randomTopicObj = topics[Math.floor(Math.random() * topics.length)];
+  const randomTopic = randomTopicObj.topic;
 
   const response = await anthropic.messages.create({
     model: 'claude-haiku-4-5',
@@ -93,9 +95,13 @@ Format your response as JSON:
   const blogData = JSON.parse(jsonMatch[0]);
   const reading_time = estimateReadingTime(blogData.content);
 
+  // Pick a relevant Unsplash image
+  const imageUrl = `https://images.unsplash.com/photo-${Math.random() > 0.5 ? '1528164344705-47542687000d' : '1490376840353-1171d95b27a4'}?w=1200&h=500&fit=crop&q=80`;
+
   return {
     ...blogData,
-    reading_time_minutes: reading_time
+    reading_time_minutes: reading_time,
+    featured_image_url: imageUrl
   };
 }
 
@@ -131,6 +137,7 @@ export async function POST(request: Request) {
           excerpt: blogPost.excerpt,
           tags: blogPost.tags,
           reading_time_minutes: blogPost.reading_time_minutes,
+          featured_image_url: blogPost.featured_image_url,
           status: 'published',
           published_at: new Date().toISOString(),
           meta_title: blogPost.title,
@@ -158,6 +165,7 @@ export async function POST(request: Request) {
         excerpt: blogPost.excerpt,
         tags: blogPost.tags,
         reading_time_minutes: blogPost.reading_time_minutes,
+        featured_image_url: blogPost.featured_image_url,
         status: 'published',
         published_at: new Date().toISOString(),
         meta_title: blogPost.title,

@@ -20,12 +20,13 @@ interface BlogPost {
   published_at: string;
   reading_time_minutes: number;
   tags: string[];
+  featured_image_url: string | null;
 }
 
 async function getBlogPosts(): Promise<BlogPost[]> {
   const { data, error } = await supabase
     .from('blog_posts')
-    .select('id, title, slug, excerpt, published_at, reading_time_minutes, tags')
+    .select('id, title, slug, excerpt, published_at, reading_time_minutes, tags, featured_image_url')
     .eq('status', 'published')
     .order('published_at', { ascending: false });
 
@@ -86,8 +87,18 @@ export default async function BlogPage() {
               {posts.map((post) => (
                 <article key={post.id} className="group">
                   <Link href={`/blog/${post.slug}`} className="block">
-                    <div className="border border-[#222] rounded-3xl p-10 bg-[#111] hover:bg-[#181818] hover:border-[#2a2a2a] transition-all duration-300">
-                      <div className="flex items-center gap-3 mb-4 text-sm text-[#666]">
+                    <div className="border border-[#222] rounded-3xl bg-[#111] hover:bg-[#181818] hover:border-[#2a2a2a] transition-all duration-300 p-6 flex gap-6 items-start">
+                      {post.featured_image_url && (
+                        <div className="flex-shrink-0 w-[180px] h-[120px] rounded-xl overflow-hidden">
+                          <img
+                            src={post.featured_image_url}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      )}
+                      <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3 text-sm text-[#666]">
                         <time dateTime={post.published_at}>
                           {formatDate(post.published_at)}
                         </time>
@@ -98,10 +109,10 @@ export default async function BlogPage() {
                           </>
                         )}
                       </div>
-                      <h2 className="text-[32px] font-extrabold tracking-[-1px] leading-[1.1] mb-3 text-[#EFEFEF] group-hover:text-[#E85D3A] transition-colors">
+                      <h2 className="text-[24px] font-extrabold tracking-[-1px] leading-[1.2] mb-2 text-[#EFEFEF] group-hover:text-[#E85D3A] transition-colors">
                         {post.title}
                       </h2>
-                      <p className="text-[16px] text-[#666] leading-[1.65] mb-4">
+                      <p className="text-[15px] text-[#666] leading-[1.6] mb-3">
                         {post.excerpt}
                       </p>
                       {post.tags && post.tags.length > 0 && (
@@ -116,6 +127,7 @@ export default async function BlogPage() {
                           ))}
                         </div>
                       )}
+                      </div>
                     </div>
                   </Link>
                 </article>

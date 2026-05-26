@@ -20,6 +20,7 @@ interface BlogPost {
   tags: string[];
   meta_title: string | null;
   meta_description: string | null;
+  featured_image_url: string | null;
 }
 
 async function getBlogPost(slug: string): Promise<BlogPost | null> {
@@ -122,6 +123,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           )}
 
+          {/* FEATURED IMAGE */}
+          {post.featured_image_url && (
+            <div className="mb-12 rounded-2xl overflow-hidden">
+              <img
+                src={post.featured_image_url}
+                alt={post.title}
+                className="w-full h-[400px] object-cover"
+              />
+            </div>
+          )}
+
           {/* CONTENT */}
           <div className="bg-white rounded-2xl p-12 shadow-lg">
             <div
@@ -130,11 +142,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             />
           </div>
 
+          {/* CTA */}
+          <div className="mt-16 pt-12 border-t border-[#e5e5e5] text-center">
+            <Link
+              href="/#waitlist"
+              className="inline-flex items-center justify-center gap-2 bg-[#E85D3A] text-white px-8 py-4 rounded-full font-bold text-[16px] hover:bg-[#ff7a5c] transition-all hover:shadow-lg"
+            >
+              Join the Waitlist
+            </Link>
+          </div>
+
           {/* BACK TO BLOG */}
-          <div className="mt-16 pt-12 border-t border-[#222]">
+          <div className="mt-8 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-[#666] hover:text-[#E85D3A] transition-colors font-semibold"
+              className="inline-flex items-center gap-2 text-[#666] hover:text-[#E85D3A] transition-colors font-semibold text-[15px]"
             >
               ← Back to all posts
             </Link>
