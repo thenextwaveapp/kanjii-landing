@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 // This endpoint is called by Vercel Cron every Monday at 9 AM UTC
 export async function GET(request: Request) {
