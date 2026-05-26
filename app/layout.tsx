@@ -37,7 +37,12 @@ export const metadata: Metadata = {
       "Learn Japanese the way it's actually used. Type real sentences with a Japanese IME.",
   },
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
